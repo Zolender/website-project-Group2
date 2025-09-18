@@ -173,9 +173,12 @@
 }
 @layer utilities {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   .bg-amber-500 {
     background-color: var(--color-amber-500);
 =======
+>>>>>>> 781e1aabebac34565671dda3ec4317a321935fcf
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
@@ -236,9 +239,12 @@
   .resize {
     resize: both;
   }
+<<<<<<< HEAD
+=======
   .list-none {
     list-style-type: none;
   }
+>>>>>>> 781e1aabebac34565671dda3ec4317a321935fcf
   .flex-col {
     flex-direction: column;
   }
@@ -326,16 +332,22 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+<<<<<<< HEAD
+=======
 >>>>>>> f97acb09d644c3dc560327c9b6f10cc33bae8c14
+>>>>>>> 781e1aabebac34565671dda3ec4317a321935fcf
   }
   .text-7xl {
     font-size: var(--text-7xl);
     line-height: var(--tw-leading, var(--text-7xl--line-height));
   }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
   .text-amber-200 {
     color: var(--color-amber-200);
 =======
+>>>>>>> 781e1aabebac34565671dda3ec4317a321935fcf
   .font-extrabold {
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
@@ -346,7 +358,10 @@
   }
   .text-black {
     color: var(--color-black);
+<<<<<<< HEAD
+=======
 >>>>>>> f97acb09d644c3dc560327c9b6f10cc33bae8c14
+>>>>>>> 781e1aabebac34565671dda3ec4317a321935fcf
   }
   .text-blue-800 {
     color: var(--color-blue-800);
