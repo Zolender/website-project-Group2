@@ -12,7 +12,31 @@
         .then((response) => response.text())
         .then((html) => {
             document.getElementById(id).innerHTML = html;
+            if(id==='header')toggleNavIcon();
         });
+    }
+
+
+    function toggleNavIcon(){
+        const pageLink = document.getElementById("toggleable");
+        const hamburger = document.getElementById("hamburger");
+        const cross = document.getElementById("cross");
+        if(!pageLink || !hamburger || !cross) {
+            return;
+        }
+
+        const currentPage = window.location.pathname.split('/').pop();
+
+        if(currentPage === 'menu.html'){
+            hamburger.classList.add('hidden');
+            cross.classList.remove('hidden');
+            pageLink.href = 'index.html';
+        } else {
+            hamburger.classList.remove('hidden');
+            cross.classList.add('hidden');
+            pageLink.href = 'menu.html';
+        }
+    
     }
 
     window.onload = () => {
