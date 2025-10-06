@@ -13,8 +13,18 @@
         .then((html) => {
             document.getElementById(id).innerHTML = html;
             if(id==='header')toggleNavIcon();
+            if(id==='footer')adjustFooterForPage();
         });
     };
+
+    function adjustFooterForPage() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const footerShape = document.getElementById('red');
+        
+        if(footerShape && (currentPage === 'contact.html' || currentPage === 'dataPrivacy.html')) {
+            footerShape.classList.add('hidden');
+        }
+    }
 
 
     function toggleNavIcon(){
