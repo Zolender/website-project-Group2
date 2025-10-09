@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,19 +12,10 @@
         .then((response) => response.text())
         .then((html) => {
             document.getElementById(id).innerHTML = html;
-            if(id==="header")toggleNavIcon();
-            if(id==="footer")adjustFooterForPage();
+            if(id==='header')toggleNavIcon();
         });
     }
 
-    function adjustFooterForPage() {
-        const currentPage = window.location.pathname.split('/').pop();
-        const footerShape = document.getElementById('red');
-        
-        if(footerShape && (currentPage === 'contact.html' || currentPage === 'dataPrivacy.html')) {
-            footerShape.classList.add('max-md:hidden');
-        }
-    }
 
     function toggleNavIcon(){
         const pageLink = document.getElementById("toggleable");
@@ -50,15 +40,14 @@
     }
 
     window.onload = () => {
-        loadComponents('header', 'src/sections/header.html');
-        loadComponents('dataPrivacy', 'src/sections/dataPrivacyInfo.html');
-        loadComponents('footer', 'src/sections/footer.html');
-    }
+    loadComponents('header', 'src/sections/header.html');
+    loadComponents('hero', 'src/sections/hero.html');
+    loadComponents('menu', 'src/sections/menuContent.html');
+}
 </script>
 <body class="bg-[#EFECEA]">
-    <div id="header" class="text-[#00672E]"></div>
-    <div id="dataPrivacy" class="text-[#00672E]"></div>
-    <div id="footer" class="text-[#00672E]"></div>
-
+    <div id="header"></div>
+    <div class="text-[#00672E]" id="menu"></div>
+    <!-- <div id="hero"></div> -->
 </body>
 </html>
