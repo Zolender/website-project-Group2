@@ -7,59 +7,86 @@
     <title>Website project template</title>
 </head>
 <script>
-    const loadComponents = (id, url) =>  {
-        fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-            document.getElementById(id).innerHTML = html;
-            if(id==='header')toggleNavIcon();
-            if(id==='footer')adjustFooterForPage();
+const headerOffset = 80;
+
+const loadComponents = async (id, url) => {
+    try {
+        const response = await fetch(url);
+        const html = await response.text();
+        document.getElementById(id).innerHTML = html;
+
+        if (id === 'header') {
+            toggleNavIcon();
+            attachNavLinkHandler();
+        }
+        if (id === 'footer') adjustFooterForPage();
+
+        const hash = window.location.hash.replace('#','');
+        if(hash && hash === id) {
+            const target = document.getElementById(hash);
+            if(target) {
+                target.scrollIntoView();
+            }
+        }
+
+    } catch(err) {
+        console.error(`Error loading component ${id}:`, err);
+    }
+}
+
+function adjustFooterForPage() {
+    const currentPage = window.location.pathname.split('/').pop();
+    const footerShape = document.getElementById('red');
+    if (footerShape && (currentPage === 'contact.html' || currentPage === 'dataPrivacy.html')) {
+        footerShape.classList.add('hidden');
+    }
+}
+
+function toggleNavIcon() {
+    const pageLink = document.getElementById("toggleable");
+    const hamburger = document.getElementById("hamburger");
+    const cross = document.getElementById("cross");
+    if (!pageLink || !hamburger || !cross) return;
+
+    const currentPage = window.location.pathname.split('/').pop();
+    if (currentPage === 'menu.html') {
+        hamburger.classList.add('hidden');
+        cross.classList.remove('hidden');
+        pageLink.href = 'index.html';
+    } else {
+        hamburger.classList.remove('hidden');
+        cross.classList.add('hidden');
+        pageLink.href = 'menu.html';
+    }
+}
+
+function attachNavLinkHandler() {
+    document.querySelectorAll('.scroll-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const [page, hash] = href.split('#');
+            const currentPage = window.location.pathname.split('/').pop();
+            if(currentPage === page || (page === 'index.html' && currentPage === 'index.html')) {
+                e.preventDefault();
+                const target = document.getElementById(hash);
+                if(target) {
+                    target.scrollIntoView();
+                }
+            }
         });
-    };
+    });
+}
 
-    function adjustFooterForPage() {
-        const currentPage = window.location.pathname.split('/').pop();
-        const footerShape = document.getElementById('red');
-        
-        if(footerShape && (currentPage === 'contact.html' || currentPage === 'dataPrivacy.html')) {
-            footerShape.classList.add('hidden');
-        }
-    }
-
-
-    function toggleNavIcon(){
-        const pageLink = document.getElementById("toggleable");
-        const hamburger = document.getElementById("hamburger");
-        const cross = document.getElementById("cross");
-        if(!pageLink || !hamburger || !cross) {
-            return;
-        }
-
-        const currentPage = window.location.pathname.split('/').pop();
-
-        if(currentPage === 'menu.html'){
-            hamburger.classList.add('hidden');
-            cross.classList.remove('hidden');
-            pageLink.href = 'index.html';
-        } else {
-            hamburger.classList.remove('hidden');
-            cross.classList.add('hidden');
-            pageLink.href = 'menu.html';
-        }
-    
-    }
-
-    
-
-    window.onload = () => {
+window.addEventListener('load', () => {
     loadComponents('header', 'src/sections/header.html');
     loadComponents('hero', 'src/sections/hero.html');
     loadComponents('description', 'src/sections/description.html');
     loadComponents('strategy', 'src/sections/strategy.html');
     loadComponents('reference', 'src/sections/reference.html');
     loadComponents('footer', 'src/sections/footer.html');
-}
+});
 </script>
+
 <body class="bg-[#EFECEA]">
     <div id="header"></div>
     <div id="hero"></div>
