@@ -322,6 +322,9 @@
   .h-\[800px\] {
     height: 800px;
   }
+  .h-full {
+    height: 100%;
+  }
   .h-screen {
     height: 100vh;
   }
@@ -471,9 +474,6 @@
   .bg-yellow-300 {
     background-color: var(--color-yellow-300);
   }
-  .bg-contain {
-    background-size: contain;
-  }
   .bg-cover {
     background-size: cover;
   }
@@ -482,6 +482,9 @@
   }
   .bg-no-repeat {
     background-repeat: no-repeat;
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .p-8 {
     padding: calc(var(--spacing) * 8);
