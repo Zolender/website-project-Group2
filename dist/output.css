@@ -767,6 +767,9 @@
   .bg-yellow-300 {
     background-color: var(--color-yellow-300);
   }
+  .bg-contain {
+    background-size: contain;
+  }
   .bg-cover {
     background-size: cover;
   }
@@ -919,6 +922,11 @@
   .\[clip-path\:polygon\(71\.18\%_0\%\,18\.84\%_11\.77\%\,0\%_39\.76\%\,14\.28\%_76\.55\%\,100\%_99\.85\%\,100\%_17\.55\%\)\] {
     clip-path: polygon(71.18% 0%,18.84% 11.77%,0% 39.76%,14.28% 76.55%,100% 99.85%,100% 17.55%);
   }
+  .max-\[890px\]\:hidden {
+    @media (width < 890px) {
+      display: none;
+    }
+  }
   .max-md\:hidden {
     @media (width < 48rem) {
       display: none;
@@ -960,6 +968,11 @@
   .max-sm\:gap-2 {
     @media (width < 40rem) {
       gap: calc(var(--spacing) * 2);
+    }
+  }
+  .min-\[890px\]\:hidden {
+    @media (width >= 890px) {
+      display: none;
     }
   }
   .sm\:mt-20 {
@@ -2123,6 +2136,41 @@
     @media (width >= 80rem) {
       font-size: var(--text-4xl);
       line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .\[max-\[890px\]\]\:hidden {
+    &:is(max-[890px]) {
+      display: none;
+    }
+  }
+  .\[min-\]\:hidden {
+    &:is(min-) {
+      display: none;
+    }
+  }
+  .\[min-\[890\]\]\:hidden {
+    &:is(min-[890]) {
+      display: none;
+    }
+  }
+  .\[min-\[890px\]\]\:hidden {
+    &:is(min-[890px]) {
+      display: none;
+    }
+  }
+  .\[min-\[8\]\]\:hidden {
+    &:is(min-[8]) {
+      display: none;
+    }
+  }
+  .\[min-\[\]\]\:hidden {
+    &:is(min-[]) {
+      display: none;
+    }
+  }
+  .\[min-md\]\:hidden {
+    &:is(min-md) {
+      display: none;
     }
   }
   .\[min-width\:831px\]\:top-\[277px\] {
