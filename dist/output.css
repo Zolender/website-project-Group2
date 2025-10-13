@@ -370,11 +370,20 @@
   .-mt-20 {
     margin-top: calc(var(--spacing) * -20);
   }
+  .mt-0 {
+    margin-top: calc(var(--spacing) * 0);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
+  }
+  .mt-60 {
+    margin-top: calc(var(--spacing) * 60);
+  }
+  .mt-600 {
+    margin-top: calc(var(--spacing) * 600);
   }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
@@ -1155,6 +1164,11 @@
   .md\:mt-10 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:mt-80 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 80);
     }
   }
   .min-md\:mt-40 {
