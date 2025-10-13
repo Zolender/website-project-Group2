@@ -259,8 +259,20 @@
   .-bottom-1 {
     bottom: calc(var(--spacing) * -1);
   }
+  .-bottom-1\/6 {
+    bottom: calc(calc(1/6 * 100%) * -1);
+  }
   .-bottom-1\/12 {
     bottom: calc(calc(1/12 * 100%) * -1);
+  }
+  .bottom-1 {
+    bottom: calc(var(--spacing) * 1);
+  }
+  .bottom-1\/4 {
+    bottom: calc(1/4 * 100%);
+  }
+  .bottom-1\/6 {
+    bottom: calc(1/6 * 100%);
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -363,6 +375,12 @@
   }
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
+  }
+  .mb-0 {
+    margin-bottom: calc(var(--spacing) * 0);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
   }
   .ml-5 {
     margin-left: calc(var(--spacing) * 5);
