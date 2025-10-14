@@ -17,6 +17,7 @@
         .then((html) => {
             document.getElementById(id).innerHTML = html;
             if(id==='header')toggleNavIcon();
+            if (id==='hero') hideHeroText();
         });
     }
 
@@ -43,6 +44,17 @@
     
     }
 
+    function hideHeroText() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const heroText = document.getElementById('visible');
+        if (!heroText) return;
+        if (currentPage === 'menu.html') {
+            heroText.classList.add('hidden');
+        }else{
+                heroText.classList.remove('hidden');
+        }
+    }
+
     window.onload = () => {
     loadComponents('header', 'src/sections/header.html');
     loadComponents('hero', 'src/sections/hero.html');
@@ -52,6 +64,6 @@
 <body class="bg-[#EFECEA]" style="font-family: 'Outfit', sans-serif;">
     <div id="header"></div>
     <div class="text-[#00672E]" id="menu"></div>
-    <!-- <div id="hero"></div> -->
+    <div id="hero" class="mt-60 md:mt-80"></div>
 </body>
 </html>
