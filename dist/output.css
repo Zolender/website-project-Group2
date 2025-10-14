@@ -830,6 +830,11 @@
       justify-content: flex-end;
     }
   }
+  .min-\[890px\]\:gap-20 {
+    @media (width >= 890px) {
+      gap: calc(var(--spacing) * 20);
+    }
+  }
   .min-\[890px\]\:text-\[36px\] {
     @media (width >= 890px) {
       font-size: 36px;
