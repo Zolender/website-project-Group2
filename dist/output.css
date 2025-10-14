@@ -229,9 +229,6 @@
   .bottom-1\/4 {
     bottom: calc(1/4 * 100%);
   }
-  .bottom-1\/6 {
-    bottom: calc(1/6 * 100%);
-  }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
@@ -301,6 +298,9 @@
   .block {
     display: block;
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -327,13 +327,27 @@
   }
   .h-\[var\(--blue-h\)\] {
     height: var(--blue-h);
+  .h-\[var\(--blue-h\)\] {
+    height: var(--blue-h);
   }
+  .h-\[var\(--greenA-h\)\] {
+    height: var(--greenA-h);
   .h-\[var\(--greenA-h\)\] {
     height: var(--greenA-h);
   }
   .h-\[var\(--greenB-h\)\] {
     height: var(--greenB-h);
+  .h-\[var\(--greenB-h\)\] {
+    height: var(--greenB-h);
   }
+  .h-\[var\(--pink-h\)\] {
+    height: var(--pink-h);
+  }
+  .h-\[var\(--red-h\)\] {
+    height: var(--red-h);
+  }
+  .h-\[var\(--yellow-h\)\] {
+    height: var(--yellow-h);
   .h-\[var\(--pink-h\)\] {
     height: var(--pink-h);
   }
@@ -871,7 +885,9 @@
     }
   }
   .lg\:hidden {
+  .lg\:hidden {
     @media (width >= 64rem) {
+      display: none;
       display: none;
     }
   }
@@ -935,6 +951,164 @@
       font-size: 48px;
     }
   }
+}
+.hero {
+  --vw-min: 375;
+  --vw-mid: 890;
+  --vw-max: 1024;
+  --t: clamp(0, (100vw - var(--vw-min) * 1px) / ((var(--vw-mid) - var(--vw-min)) * 1px), 1);
+  --pink-w-s: 97.4px;
+  --pink-w-m: 206.4px;
+  --pink-w-l: 236px;
+  --pink-h-s: 155.6px;
+  --pink-h-m: 329.7px;
+  --pink-h-l: 377px;
+  --pink-top-s: 296px;
+  --pink-top-m: 236.07px;
+  --pink-top-l: 277px;
+  --pink-left-s: 254px;
+  --pink-left-m: 536.13px;
+  --pink-left-l: 599px;
+  --yellow-w-s: 299.6346435546875px;
+  --yellow-w-m: 634.9542236328125px;
+  --yellow-w-l: 726px;
+  --yellow-h-s: 360.5054626464844px;
+  --yellow-h-m: 763.9452514648438px;
+  --yellow-h-l: 873.4869995117188px;
+  --yellow-top-s: 287px;
+  --yellow-top-m: 217px;
+  --yellow-top-l: 253.67px;
+  --yellow-left-s: 1px;
+  --yellow-left-m: 1px;
+  --yellow-left-l: -1px;
+  --greenA-w-s: 200px;
+  --greenA-w-m: 355.0845642089844px;
+  --greenA-w-l: 406px;
+  --greenA-h-s: 321px;
+  --greenA-h-m: 679.12109375px;
+  --greenA-h-l: 776.5px;
+  --greenA-top-s: 386px;
+  --greenA-top-m: 426.79px;
+  --greenA-top-l: 504.5px;
+  --greenA-left-s: 227px;
+  --greenA-left-m: 478.92px;
+  --greenA-left-l: 1107px;
+  --blue-w-s: 267px;
+  --blue-w-m: 565.8px;
+  --blue-w-l: 704px;
+  --blue-h-s: 250px;
+  --blue-h-m: 529.77px;
+  --blue-h-l: 659px;
+  --blue-top-s: 359px;
+  --blue-top-m: 369.57px;
+  --blue-top-l: 323px;
+  --blue-left-s: 114px;
+  --blue-left-m: 239.46px;
+  --blue-left-l: 621px;
+  --red-w-s: 297.77740478515625px;
+  --red-w-m: 631.0185546875px;
+  --red-w-l: 721.5px;
+  --red-h-s: 172.51690673828125px;
+  --red-h-m: 365.5796813964844px;
+  --red-h-l: 418px;
+  --red-top-s: 497.21px;
+  --red-top-m: 662.46px;
+  --red-top-l: 763px;
+  --red-left-s: 82.92px;
+  --red-left-m: 173.61px;
+  --red-left-l: 197.5px;
+  --greenB-w-s: 216.2652130126953px;
+  --greenB-w-m: 458.2864990234375px;
+  --greenB-w-l: 524px;
+  --greenB-h-s: 222.86874389648438px;
+  --greenB-h-m: 472.2799987792969px;
+  --greenB-h-l: 540px;
+  --greenB-top-s: 341px;
+  --greenB-top-m: 331.43px;
+  --greenB-top-l: 401px;
+  --greenB-left-s: 11px;
+  --greenB-left-m: 21.19px;
+  --greenB-left-l: 311px;
+  --pink-w: calc(var(--pink-w-s) + (var(--pink-w-m) - var(--pink-w-s)) * var(--t));
+  --pink-h: calc(var(--pink-h-s) + (var(--pink-h-m) - var(--pink-h-s)) * var(--t));
+  --pink-top: calc(var(--pink-top-s) + (var(--pink-top-m) - var(--pink-top-s)) * var(--t));
+  --pink-left: calc(var(--pink-left-s) + (var(--pink-left-m) - var(--pink-left-s)) * var(--t));
+  --yellow-w: calc(var(--yellow-w-s) + (var(--yellow-w-m) - var(--yellow-w-s)) * var(--t));
+  --yellow-h: calc(var(--yellow-h-s) + (var(--yellow-h-m) - var(--yellow-h-s)) * var(--t));
+  --yellow-top: calc(var(--yellow-top-s) + (var(--yellow-top-m) - var(--yellow-top-s)) * var(--t));
+  --yellow-left: calc(var(--yellow-left-s) + (var(--yellow-left-m) - var(--yellow-left-s)) * var(--t));
+  --greenA-w: calc(var(--greenA-w-s) + (var(--greenA-w-m) - var(--greenA-w-s)) * var(--t));
+  --greenA-h: calc(var(--greenA-h-s) + (var(--greenA-h-m) - var(--greenA-h-s)) * var(--t));
+  --greenA-top: calc(var(--greenA-top-s) + (var(--greenA-top-m) - var(--greenA-top-s)) * var(--t));
+  --greenA-left: calc(var(--greenA-left-s) + (var(--greenA-left-m) - var(--greenA-left-s)) * var(--t));
+  --blue-w: calc(var(--blue-w-s) + (var(--blue-w-m) - var(--blue-w-s)) * var(--t));
+  --blue-h: calc(var(--blue-h-s) + (var(--blue-h-m) - var(--blue-h-s)) * var(--t));
+  --blue-top: calc(var(--blue-top-s) + (var(--blue-top-m) - var(--blue-top-s)) * var(--t));
+  --blue-left: calc(var(--blue-left-s) + (var(--blue-left-m) - var(--blue-left-s)) * var(--t));
+  --red-w: calc(var(--red-w-s) + (var(--red-w-m) - var(--red-w-s)) * var(--t));
+  --red-h: calc(var(--red-h-s) + (var(--red-h-m) - var(--red-h-s)) * var(--t));
+  --red-top: calc(var(--red-top-s) + (var(--red-top-m) - var(--red-top-s)) * var(--t));
+  --red-left: calc(var(--red-left-s) + (var(--red-left-m) - var(--red-left-s)) * var(--t));
+  --greenB-w: calc(var(--greenB-w-s) + (var(--greenB-w-m) - var(--greenB-w-s)) * var(--t));
+  --greenB-h: calc(var(--greenB-h-s) + (var(--greenB-h-m) - var(--greenB-h-s)) * var(--t));
+  --greenB-top: calc(var(--greenB-top-s) + (var(--greenB-top-m) - var(--greenB-top-s)) * var(--t));
+  --greenB-left: calc(var(--greenB-left-s) + (var(--greenB-left-m) - var(--greenB-left-s)) * var(--t));
+}
+@media (min-width: 890px) and (max-width: 1023.98px) {
+  .hero {
+    --t2: clamp(0, (100vw - var(--vw-mid) * 1px) / ((var(--vw-max) - var(--vw-mid)) * 1px), 1);
+    --pink-w: calc(var(--pink-w-m) + (var(--pink-w-l) - var(--pink-w-m)) * var(--t2));
+    --pink-h: calc(var(--pink-h-m) + (var(--pink-h-l) - var(--pink-h-m)) * var(--t2));
+    --pink-top: calc(var(--pink-top-m) + (var(--pink-top-l) - var(--pink-top-m)) * var(--t2));
+    --pink-left: calc(var(--pink-left-m) + (var(--pink-left-l) - var(--pink-left-m)) * var(--t2));
+    --yellow-w: calc(var(--yellow-w-m) + (var(--yellow-w-l) - var(--yellow-w-m)) * var(--t2));
+    --yellow-h: calc(var(--yellow-h-m) + (var(--yellow-h-l) - var(--yellow-h-m)) * var(--t2));
+    --yellow-top: calc(var(--yellow-top-m) + (var(--yellow-top-l) - var(--yellow-top-m)) * var(--t2));
+    --yellow-left: calc(var(--yellow-left-m) + (var(--yellow-left-l) - var(--yellow-left-m)) * var(--t2));
+    --greenA-w: calc(var(--greenA-w-m) + (var(--greenA-w-l) - var(--greenA-w-m)) * var(--t2));
+    --greenA-h: calc(var(--greenA-h-m) + (var(--greenA-h-l) - var(--greenA-h-m)) * var(--t2));
+    --greenA-top: calc(var(--greenA-top-m) + (var(--greenA-top-l) - var(--greenA-top-m)) * var(--t2));
+    --greenA-left: calc(var(--greenA-left-m) + (var(--greenA-left-l) - var(--greenA-left-m)) * var(--t2));
+    --blue-w: calc(var(--blue-w-m) + (var(--blue-w-l) - var(--blue-w-m)) * var(--t2));
+    --blue-h: calc(var(--blue-h-m) + (var(--blue-h-l) - var(--blue-h-m)) * var(--t2));
+    --blue-top: calc(var(--blue-top-m) + (var(--blue-top-l) - var(--blue-top-m)) * var(--t2));
+    --blue-left: calc(var(--blue-left-m) + (var(--blue-left-l) - var(--blue-left-m)) * var(--t2));
+    --red-w: calc(var(--red-w-m) + (var(--red-w-l) - var(--red-w-m)) * var(--t2));
+    --red-h: calc(var(--red-h-m) + (var(--red-h-l) - var(--red-h-m)) * var(--t2));
+    --red-top: calc(var(--red-top-m) + (var(--red-top-l) - var(--red-top-m)) * var(--t2));
+    --red-left: calc(var(--red-left-m) + (var(--red-left-l) - var(--red-left-m)) * var(--t2));
+    --greenB-w: calc(var(--greenB-w-m) + (var(--greenB-w-l) - var(--greenB-w-m)) * var(--t2));
+    --greenB-h: calc(var(--greenB-h-m) + (var(--greenB-h-l) - var(--greenB-h-m)) * var(--t2));
+    --greenB-top: calc(var(--greenB-top-m) + (var(--greenB-top-l) - var(--greenB-top-m)) * var(--t2));
+    --greenB-left: calc(var(--greenB-left-m) + (var(--greenB-left-l) - var(--greenB-left-m)) * var(--t2));
+  }
+}
+@media (min-width: 1024px) {
+  .hero {
+    --pink-w: var(--pink-w-l);
+    --pink-h: var(--pink-h-l);
+    --pink-top: var(--pink-top-l);
+    --pink-left: var(--pink-left-l);
+    --yellow-w: var(--yellow-w-l);
+    --yellow-h: var(--yellow-h-l);
+    --yellow-top: var(--yellow-top-l);
+    --yellow-left: var(--yellow-left-l);
+    --greenA-w: var(--greenA-w-l);
+    --greenA-h: var(--greenA-h-l);
+    --greenA-top: var(--greenA-top-l);
+    --greenA-left: var(--greenA-left-l);
+    --blue-w: var(--blue-w-l);
+    --blue-h: var(--blue-h-l);
+    --blue-top: var(--blue-top-l);
+    --blue-left: var(--blue-left-l);
+    --red-w: var(--red-w-l);
+    --red-h: var(--red-h-l);
+    --red-top: var(--red-top-l);
+    --red-left: var(--red-left-l);
+    --greenB-w: var(--greenB-w-l);
+    --greenB-h: var(--greenB-h-l);
+    --greenB-top: var(--greenB-top-l);
+    --greenB-left: var(--greenB-left-l);
 }
 .hero {
   --vw-min: 375;
