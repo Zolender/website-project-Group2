@@ -338,6 +338,9 @@
   .h-15 {
     height: calc(var(--spacing) * 15);
   }
+  .h-\[72px\] {
+    height: 72px;
+  }
   .h-\[200px\] {
     height: 200px;
   }
@@ -376,6 +379,9 @@
   }
   .w-\[90\%\] {
     width: 90%;
+  }
+  .w-\[120px\] {
+    width: 120px;
   }
   .w-\[300px\] {
     width: 300px;
