@@ -24,6 +24,9 @@
                     attachNavLinkHandler();
                 }
                 if (id === 'footer') adjustFooterForPage();
+                if (id === 'hero') {
+                    initHeroParallax();
+                }
 
                 const hash = window.location.hash.replace('#','');
                 if(hash && hash === id) {
@@ -79,6 +82,42 @@
                     }
                 });
             });
+        }
+
+        function initHeroParallax() {
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const root = document.getElementById('hero');
+            if (!root) return;
+            const shapes = root.querySelectorAll('[class*="clip-path"], svg');
+            if (!shapes.length) return;
+
+            let ticking = false;
+            const update = () => {
+                shapes.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const top = rect.top;
+                    const height = rect.height || 0;
+                    const maxMove = height * 0.2;
+                    if (top <= 0) {
+                        const scrolled = Math.min(-top, maxMove);
+                        const speed = parseFloat(el.getAttribute('data-speed')) || 0.7;
+                        el.style.transform = `translateY(${scrolled * speed}px)`;
+                    } else {
+                        el.style.transform = '';
+                    }
+                });
+                ticking = false;
+            };
+
+            const onScroll = () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(update);
+                }
+            };
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            requestAnimationFrame(update);
         }
 
         window.addEventListener('load', () => {
