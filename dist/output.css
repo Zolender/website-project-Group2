@@ -230,6 +230,9 @@
   .top-\[var\(--yellow-top\)\] {
     top: var(--yellow-top);
   }
+  .right-\[-2px\] {
+    right: -2px;
+  }
   .bottom-1\/6 {
     bottom: calc(1/6 * 100%);
   }
@@ -244,9 +247,6 @@
   }
   .left-\[var\(--blue-left\)\] {
     left: var(--blue-left);
-  }
-  .left-\[var\(--greenA-left\)\] {
-    left: var(--greenA-left);
   }
   .left-\[var\(--greenB-left\)\] {
     left: var(--greenB-left);
@@ -875,7 +875,7 @@
       top: calc(var(--spacing) * 3);
     }
   }
-  .lg\:z-25 {
+  .lg\:z-\[25\] {
     @media (width >= 64rem) {
       z-index: 25;
     }
