@@ -209,8 +209,17 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .top-6 {
-    top: calc(var(--spacing) * 6);
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
+  .top-5 {
+    top: calc(var(--spacing) * 5);
+  }
+  .top-28 {
+    top: calc(var(--spacing) * 28);
+  }
+  .top-36 {
+    top: calc(var(--spacing) * 36);
   }
   .top-\[var\(--blue-top\)\] {
     top: var(--blue-top);
@@ -259,6 +268,9 @@
   }
   .left-\[var\(--yellow-left\)\] {
     left: var(--yellow-left);
+  }
+  .z-10 {
+    z-index: 10;
   }
   .z-30 {
     z-index: 30;
@@ -482,10 +494,6 @@
   .overflow-hidden {
     overflow: hidden;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .bg-\[\#0F2CCE\] {
     background-color: #0F2CCE;
   }
@@ -688,11 +696,6 @@
       gap: calc(var(--spacing) * 10);
     }
   }
-  .max-sm\:gap-20 {
-    @media (width < 40rem) {
-      gap: calc(var(--spacing) * 20);
-    }
-  }
   .min-\[890px\]\:hidden {
     @media (width >= 890px) {
       display: none;
@@ -775,9 +778,19 @@
       font-size: 18px;
     }
   }
-  .md\:top-4 {
+  .md\:top-3 {
     @media (width >= 48rem) {
-      top: calc(var(--spacing) * 4);
+      top: calc(var(--spacing) * 3);
+    }
+  }
+  .md\:top-32 {
+    @media (width >= 48rem) {
+      top: calc(var(--spacing) * 32);
+    }
+  }
+  .md\:top-40 {
+    @media (width >= 48rem) {
+      top: calc(var(--spacing) * 40);
     }
   }
   .md\:bottom-1\/2 {
@@ -922,9 +935,19 @@
       font-size: 36px;
     }
   }
-  .lg\:top-3 {
+  .lg\:top-2 {
     @media (width >= 64rem) {
-      top: calc(var(--spacing) * 3);
+      top: calc(var(--spacing) * 2);
+    }
+  }
+  .lg\:top-10 {
+    @media (width >= 64rem) {
+      top: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:top-32 {
+    @media (width >= 64rem) {
+      top: calc(var(--spacing) * 32);
     }
   }
   .lg\:z-\[25\] {
@@ -1191,9 +1214,6 @@ img, svg {
   height: auto;
 }
 @media (max-width: 890px) {
-  html, body {
-    overflow-x: hidden;
-  }
   #hero, .hero {
     overflow-x: hidden;
   }
@@ -1238,11 +1258,6 @@ img, svg {
   inherits: false;
   initial-value: 0;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-leading {
   syntax: "*";
   inherits: false;
@@ -1263,7 +1278,6 @@ img, svg {
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
-      --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
     }

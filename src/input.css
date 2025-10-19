@@ -115,9 +115,7 @@
         height: auto;
     }
     @media (max-width: 890px) {
-        html, body {
-            overflow-x: hidden;
-        }
+        /* Keep hero from creating x-scroll on small screens */
         #hero, .hero {
             overflow-x: hidden;
         }
