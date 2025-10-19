@@ -110,3 +110,15 @@
         --greenB-left: var(--greenB-left-l);
     }
     }
+    img, svg {
+        max-width: 100%;
+        height: auto;
+    }
+    @media (max-width: 890px) {
+        html, body {
+            overflow-x: hidden;
+        }
+        #hero, .hero {
+            overflow-x: hidden;
+        }
+    }
