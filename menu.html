@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <script>
     const loadComponents = (id, url) =>  {
@@ -16,19 +16,11 @@
         .then((response) => response.text())
         .then((html) => {
             document.getElementById(id).innerHTML = html;
-            if(id==="header")toggleNavIcon();
-            if(id==="footer")adjustFooterForPage();
+            if(id==='header')toggleNavIcon();
+            if (id==='hero') hideHeroText();
         });
     }
 
-    function adjustFooterForPage() {
-        const currentPage = window.location.pathname.split('/').pop();
-        const footerShape = document.getElementById('red');
-        
-        if(footerShape && (currentPage === 'contact.html' || currentPage === 'dataPrivacy.html')) {
-            footerShape.classList.add('max-md:hidden');
-        }
-    }
 
     function toggleNavIcon(){
         const pageLink = document.getElementById("toggleable");
@@ -52,16 +44,26 @@
     
     }
 
-    window.onload = () => {
-        loadComponents('header', 'src/sections/header.html');
-        loadComponents('contactInfo', 'src/sections/contactInfo.html');
-        loadComponents('footer', 'src/sections/footer.html');
+    function hideHeroText() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const heroText = document.getElementById('visible');
+        if (!heroText) return;
+        if (currentPage === 'menu.html') {
+            heroText.classList.add('hidden');
+        }else{
+                heroText.classList.remove('hidden');
+        }
     }
+
+    window.onload = () => {
+    loadComponents('header', 'src/sections/header.html');
+    loadComponents('hero', 'src/sections/hero.html');
+    loadComponents('menu', 'src/sections/menuContent.html');
+}
 </script>
 <body class="bg-[#EFECEA]" style="font-family: 'Outfit', sans-serif;">
-    <div id="header" class="text-[#00672E]"></div>
-    <div id="contactInfo"></div>
-    <div id="footer" class="text-[#00672E]"></div>
-
+    <div id="header"></div>
+    <div class="text-[#00672E]" id="menu"></div>
+    <div id="hero" class="mt-60 md:mt-80"></div>
 </body>
 </html>

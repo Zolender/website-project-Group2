@@ -1,4 +1,31 @@
-<div>
-    <h1 class="texbl">Header</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
+<div class="w-full flex justify-between items-center p-8 fixed top-0 left-0 z-100 max-md:px-2">
+    <div class="flex flex-col space-y-0 justify-center items-center">
+        <a href="#" class="no-underline">DE</a>
+        <a href="#" class="no-underline">EN</a>
+    </div>
+    <h1 class="relative text-2xl font-extrabold md:text-4xl leading-none text-center">
+        <img src="./src/assets/titleBg.png" alt="" class="min-sm:hidden h-10 md:h-14 lg:h-16 w-auto select-none pointer-events-none mx-auto">
+        <a href="./index.html" class="absolute inset-0 flex items-center justify-center px-2 md:px-3 no-underline">Baumeister</a>
+    </h1>
+    <nav>
+        <div class="max-[890px]:hidden flex flex-col -mt-4 text-right -space-y-2">
+            <a href="./index.html#description" class="no-underline scroll-link">About</a>
+            <a href="./index.html#strategy" class="no-underline scroll-link">Services</a>
+            <a href="./index.html#reference" class="no-underline scroll-link">References</a>
+            <a href="./contact.html" class="no-underline">Contact</a>
+        </div>
+        <div class="min-[890px]:hidden">
+            <a href="./menu.html" id="toggleable" class="flex items-center justify-center h-15 w-15 relative">
+                <svg class="h-full w-full object-contain" viewBox="0 0 39 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.10811 2.11842L0 12.1053L8.64865 21.3493L31.5135 23L39 12.0227L28 0L1.10811 2.11842Z"/>
+                </svg>
+                <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu absolute">
+                    <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                </svg>
+                <svg id="cross" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x absolute">
+                    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
 </div>
