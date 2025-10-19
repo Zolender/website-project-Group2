@@ -305,17 +305,11 @@
   .ml-5 {
     margin-left: calc(var(--spacing) * 5);
   }
-  .block {
-    display: block;
-  }
   .flex {
     display: flex;
   }
   .hidden {
     display: none;
-  }
-  .inline-flex {
-    display: inline-flex;
   }
   .aspect-\[457\/684\] {
     aspect-ratio: 457/684;
@@ -488,10 +482,6 @@
   .overflow-hidden {
     overflow: hidden;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .bg-\[\#0F2CCE\] {
     background-color: #0F2CCE;
   }
@@ -512,9 +502,6 @@
   }
   .bg-yellow-300 {
     background-color: var(--color-yellow-300);
-  }
-  .bg-contain {
-    background-size: contain;
   }
   .bg-cover {
     background-size: cover;
@@ -542,9 +529,6 @@
   }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
-  }
-  .py-0\.5 {
-    padding-block: calc(var(--spacing) * 0.5);
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
@@ -1203,6 +1187,18 @@
     --greenB-left: var(--greenB-left-l);
   }
 }
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 890px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  #hero, .hero {
+    overflow-x: hidden;
+  }
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -1243,11 +1239,6 @@
   inherits: false;
   initial-value: 0;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-leading {
   syntax: "*";
   inherits: false;
@@ -1268,7 +1259,6 @@
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
-      --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
     }
