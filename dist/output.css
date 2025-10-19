@@ -482,6 +482,10 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .bg-\[\#0F2CCE\] {
     background-color: #0F2CCE;
   }
@@ -518,8 +522,8 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -679,6 +683,16 @@
       gap: calc(var(--spacing) * 2);
     }
   }
+  .max-sm\:gap-10 {
+    @media (width < 40rem) {
+      gap: calc(var(--spacing) * 10);
+    }
+  }
+  .max-sm\:gap-20 {
+    @media (width < 40rem) {
+      gap: calc(var(--spacing) * 20);
+    }
+  }
   .min-\[890px\]\:hidden {
     @media (width >= 890px) {
       display: none;
@@ -821,11 +835,6 @@
       display: grid;
     }
   }
-  .md\:h-14 {
-    @media (width >= 48rem) {
-      height: calc(var(--spacing) * 14);
-    }
-  }
   .md\:h-\[99px\] {
     @media (width >= 48rem) {
       height: 99px;
@@ -886,11 +895,6 @@
       row-gap: calc(var(--spacing) * 10);
     }
   }
-  .md\:px-3 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 3);
-    }
-  }
   .min-md\:py-30 {
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 30);
@@ -946,11 +950,6 @@
   .lg\:flex {
     @media (width >= 64rem) {
       display: flex;
-    }
-  }
-  .lg\:h-16 {
-    @media (width >= 64rem) {
-      height: calc(var(--spacing) * 16);
     }
   }
   .lg\:h-\[134px\] {
@@ -1239,6 +1238,11 @@ img, svg {
   inherits: false;
   initial-value: 0;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-leading {
   syntax: "*";
   inherits: false;
@@ -1259,6 +1263,7 @@ img, svg {
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
     }
